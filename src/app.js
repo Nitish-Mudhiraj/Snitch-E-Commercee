@@ -10,13 +10,10 @@ const { Strategy: GoogleStrategy } = require("passport-google-oauth20");
 const app = express()
 app.use(express.json())
 app.use(cookieparser())
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://snitch-e-commercee.onrender.com"
-];
+
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin:"https://snitch-e-commercee.onrender.com",
   credentials: true
 }));
 
@@ -28,7 +25,7 @@ passport.use(
         {
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_SECRECT_ID,
-            callbackURL: "http://localhost:3000/snitch/api/user/google/callback"
+            callbackURL: "https://snitch-e-commercee.onrender.com/snitch/api/user/google/callback"
         },
         async (accessToken, refreshToken, profile, done) => {
             try {

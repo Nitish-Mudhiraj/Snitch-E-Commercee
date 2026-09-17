@@ -141,7 +141,7 @@ async function googleouth(req,res){
     res.cookie("token", token)
 
     // Redirect to frontend
-    res.redirect("http://localhost:5173/")
+   res.redirect("https://snitch-e-commercee.onrender.com/")
 }
 
 
