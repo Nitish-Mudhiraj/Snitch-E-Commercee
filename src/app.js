@@ -13,10 +13,12 @@ app.use(cookieparser())
 
 
 app.use(cors({
-  origin:"https://snitch-e-commercee.onrender.com",
-  credentials: true
-}));
-
+    origin: [
+        "http://localhost:3000",
+        "https://snitch-e-commercee.onrender.com"
+    ],
+    credentials: true
+}))
 
 
 app.use(passport.initialize())
